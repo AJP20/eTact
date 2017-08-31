@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
     
     @IBOutlet weak var testLabel: UILabel!
     
@@ -67,6 +67,7 @@ class ViewController: UIViewController {
     
     
     
-
+    
 }
+
 
