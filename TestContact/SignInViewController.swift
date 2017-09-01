@@ -8,12 +8,14 @@
 
 import UIKit
 
+var currentId: String!
+
 class SignInViewController: UIViewController {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     
     func callHome(){
-        performSegue(withIdentifier: "test", sender: nil)
+        performSegue(withIdentifier: "HomeSegue", sender: nil)
     }
     
     @IBAction func signInButton(_ sender: Any){
@@ -53,8 +55,10 @@ class SignInViewController: UIViewController {
                 let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
                 
                 if let parseJSON = json {
-                    let id = parseJSON["id"] as? Int
-                    if id! > 0{
+                    let pof = parseJSON["pof"] as? Int
+                    currentId = parseJSON["id"] as? String
+                    print(currentId)
+                    if pof! > 0{
                         DispatchQueue.main.async {
                             self.callHome();
                         }
@@ -69,8 +73,8 @@ class SignInViewController: UIViewController {
         }
         task.resume()
         
-        
     }
+    
     
     func removeActivityIndicator(activityIndicator: UIActivityIndicatorView){
         DispatchQueue.main.async {
