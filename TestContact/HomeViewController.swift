@@ -10,7 +10,34 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    @IBOutlet weak var testLabel: UILabel!
+    @IBOutlet weak var settingsImage: UIImageView!
+    @IBOutlet weak var name: UILabel!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
+        
+        name.text = "Andrew Phillips"
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(HomeViewController.imageTapped(gesture:)))
+        
+        // add it to the image view;
+        settingsImage.addGestureRecognizer(tapGesture)
+        // make sure imageView can be interacted with by user
+        settingsImage.isUserInteractionEnabled = true
+    }
+    
+    @IBAction func signOutButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "HomeSegue", sender: nil)
+    }
+    func imageTapped(gesture: UIGestureRecognizer) {
+        // if the tapped view is a UIImageView then set it to imageview
+        if (gesture.view as? UIImageView) != nil {
+            print("Image Tapped")
+            //Here you can initiate your new ViewController
+            performSegue(withIdentifier: "EditProfileSegue", sender: nil)
+        }
+    }
     
     @IBAction func snapchatButton(_ sender: UIButton) {
         let snapchatExtention = "snapchat://add/ajp_20"

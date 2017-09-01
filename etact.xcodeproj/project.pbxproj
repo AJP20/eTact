@@ -13,9 +13,9 @@
 		4919E4291F53B06E001AC026 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4919E4271F53B06E001AC026 /* LaunchScreen.storyboard */; };
 		4919E4341F53B06F001AC026 /* TestContactTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4919E4331F53B06F001AC026 /* TestContactTests.swift */; };
 		4919E43F1F53B06F001AC026 /* TestContactUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4919E43E1F53B06F001AC026 /* TestContactUITests.swift */; };
-		4919E44F1F53F06F001AC026 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4919E44E1F53F06F001AC026 /* EditProfileViewController.swift */; };
 		4919E4511F54CECD001AC026 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4919E4501F54CECD001AC026 /* RegisterViewController.swift */; };
 		495BD5581F5687DB0029DA82 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495BD5571F5687DB0029DA82 /* HomeViewController.swift */; };
+		495BD5EB1F57BEF30029DA82 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495BD5EA1F57BEF30029DA82 /* EditProfileViewController.swift */; };
 		49BB86D01F54D3710070EEFB /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BB86CF1F54D3710070EEFB /* SignInViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,9 +49,9 @@
 		4919E43A1F53B06F001AC026 /* etactUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = etactUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4919E43E1F53B06F001AC026 /* TestContactUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestContactUITests.swift; sourceTree = "<group>"; };
 		4919E4401F53B06F001AC026 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4919E44E1F53F06F001AC026 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		4919E4501F54CECD001AC026 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		495BD5571F5687DB0029DA82 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		495BD5EA1F57BEF30029DA82 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		49BB86CF1F54D3710070EEFB /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,12 +106,12 @@
 				4919E41E1F53B06E001AC026 /* AppDelegate.swift */,
 				4919E4221F53B06E001AC026 /* Main.storyboard */,
 				495BD5571F5687DB0029DA82 /* HomeViewController.swift */,
-				4919E44E1F53F06F001AC026 /* EditProfileViewController.swift */,
 				4919E4251F53B06E001AC026 /* Assets.xcassets */,
 				4919E4271F53B06E001AC026 /* LaunchScreen.storyboard */,
 				4919E42A1F53B06E001AC026 /* Info.plist */,
 				4919E4501F54CECD001AC026 /* RegisterViewController.swift */,
 				49BB86CF1F54D3710070EEFB /* SignInViewController.swift */,
+				495BD5EA1F57BEF30029DA82 /* EditProfileViewController.swift */,
 			);
 			path = TestContact;
 			sourceTree = "<group>";
@@ -269,10 +269,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4919E44F1F53F06F001AC026 /* EditProfileViewController.swift in Sources */,
 				4919E4511F54CECD001AC026 /* RegisterViewController.swift in Sources */,
 				49BB86D01F54D3710070EEFB /* SignInViewController.swift in Sources */,
 				4919E41F1F53B06E001AC026 /* AppDelegate.swift in Sources */,
+				495BD5EB1F57BEF30029DA82 /* EditProfileViewController.swift in Sources */,
 				495BD5581F5687DB0029DA82 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

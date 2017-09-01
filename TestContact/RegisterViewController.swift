@@ -15,6 +15,11 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var repassword: UITextField!
     
+    @IBOutlet weak var phoneNumber: UITextField!
+    @IBOutlet weak var snapchat: UITextField!
+    @IBOutlet weak var instagram: UITextField!
+    @IBOutlet weak var twitter: UITextField!
+    
     @IBAction func cancelButton(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -23,7 +28,11 @@ class RegisterViewController: UIViewController {
         if(firstName.text?.isEmpty)! ||
             (lastName.text?.isEmpty)! ||
             (email.text?.isEmpty)! ||
-            (password.text?.isEmpty)!{
+            (password.text?.isEmpty)! ||
+            (phoneNumber.text?.isEmpty)! ||
+            (snapchat.text?.isEmpty)! ||
+            (instagram.text?.isEmpty)! ||
+            (twitter.text?.isEmpty)!{
             //Display alert
             displayMessage(userMessage: "All fields are required.")
             return
@@ -43,14 +52,20 @@ class RegisterViewController: UIViewController {
         
         //HTTP request
         //PHP
-        let fName = "firstName="+firstName.text!
-        let lName = "&lastName="+lastName.text!
-        let e = "&email="+email.text!
-        let p = "&password="+password.text!
+        let fName = "FirstName="+firstName.text!
+        let lName = "&LastName="+lastName.text!
+        let e = "&Email="+email.text!
+        let p = "&Password="+password.text!
+        
+        let pn = "&PhoneNumber="+phoneNumber.text!
+        let sc = "&Snapchat="+snapchat.text!
+        let insta = "&Instagram="+instagram.text!
+        let twit = "&Twitter="+twitter.text!
+        
         let myUrl = URL(string: "http://anphillips.com/eTact/register.php")
         var request = URLRequest(url:myUrl!)
         request.httpMethod = "POST"// Compose a query string
-        let postString = fName+lName+e+p
+        let postString = fName+lName+e+p+pn+sc+insta+twit
         
         request.httpBody = postString.data(using: String.Encoding.utf8)
         let task = URLSession.shared.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
@@ -61,12 +76,23 @@ class RegisterViewController: UIViewController {
                 print("error=\(String(describing: error))")
                 return
             }
-            else{
-                self.displayMessage(userMessage: "Successfully registered!")
+            do {
+                let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
+                
+                if let parseJSON = json {
+                    let pof = parseJSON["pof"] as? Int
+                    if pof! == 1{
+                        self.displayMessage(userMessage: "Successfully registered.")
+                    }
+                    else {
+                        self.displayMessage(userMessage: "Failed.")
+                    }
+                }
+            } catch {
+                print(error)
             }
         }
         task.resume()
-        
         
     }
     
