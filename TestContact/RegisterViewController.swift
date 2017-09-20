@@ -62,10 +62,12 @@ class RegisterViewController: UIViewController {
         let insta = "&Instagram="+instagram.text!
         let twit = "&Twitter="+twitter.text!
         
+        let deviceID = "&Device="+UIDevice.current.identifierForVendor!.uuidString
+        
         let myUrl = URL(string: "http://anphillips.com/eTact/register.php")
         var request = URLRequest(url:myUrl!)
         request.httpMethod = "POST"// Compose a query string
-        let postString = fName+lName+e+p+pn+sc+insta+twit
+        let postString = fName+lName+e+p+pn+sc+insta+twit+deviceID
         
         request.httpBody = postString.data(using: String.Encoding.utf8)
         let task = URLSession.shared.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
