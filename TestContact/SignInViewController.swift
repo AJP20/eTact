@@ -36,8 +36,8 @@ class SignInViewController: UIViewController {
         
         //HTTP request
         //PHP
-        let e = "&email="+email.text!
-        let p = "&password="+password.text!
+        let e = "&Email="+email.text!
+        let p = "&Password="+password.text!
         let myUrl = URL(string: "http://anphillips.com/eTact/signin.php")
         var request = URLRequest(url:myUrl!)
         request.httpMethod = "POST"// Compose a query string
